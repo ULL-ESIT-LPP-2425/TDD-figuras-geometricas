@@ -1,7 +1,7 @@
 # Ejemplo de pasos realizados
 
 
-1. No existe el fichero de pruebas
+1. No existe el fichero de pruebas  - falla
 
      $rake
      rspec -I. spec/figgeo_spec.rb
@@ -41,4 +41,51 @@
      Tasks: TOP => default => spec
      (See full trace by running task with --trace)
 
-2. Se crea fichero de pruebas vací vacío
+2. Se crea fichero de pruebas vacío  -- funciona
+
+     $touch mkdir spec
+     $touch spec/figgeo_spec.rb
+     $ rake
+     rspec -I. spec/figgeo_spec.rb
+     No examples found.
+     
+     
+     Finished in 0.00021 seconds (files took 0.05534 seconds to load)
+     0 examples, 0 failures
+
+3. Se modifica el fichero de pruebas indicando dónde esta el fichero de código -- falla
+
+     $ rake
+     rspec -I. spec/figgeo_spec.rb
+     
+     An error occurred while loading ./spec/figgeo_spec.rb.
+     Failure/Error: require 'figgeo'
+     
+     LoadError:
+       cannot load such file -- figgeo
+     # ./spec/figgeo_spec.rb:1:in `<top (required)>'
+     No examples found.
+     
+     
+     Finished in 0.00003 seconds (files took 0.08869 seconds to load)
+     0 examples, 0 failures, 1 error occurred outside of examples
+     
+     rake aborted!
+     Command failed with status (1): [rspec -I. spec/figgeo_spec.rb...]
+     /home/usuario/LPP/TDD/Rakefile:5:in `block in <top (required)>'
+     Tasks: TOP => default => spec
+     (See full trace by running task with --trace)
+
+
+4. Se crea fichero de código vacío  -- funciona
+
+     $ mkdir lib
+     $ touch lib/figgeo.rb
+     $ rake
+     rspec -I. spec/figgeo_spec.rb
+     No examples found.
+     
+     
+     Finished in 0.00031 seconds (files took 0.07999 seconds to load)
+     0 examples, 0 failures
+
