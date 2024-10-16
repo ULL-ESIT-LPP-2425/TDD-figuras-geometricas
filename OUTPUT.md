@@ -89,3 +89,78 @@
      Finished in 0.00031 seconds (files took 0.07999 seconds to load)
      0 examples, 0 failures
 
+5. Se añaden pruebas al fichero de pruebas  -- falla 
+
+     $ rake
+     rspec -I. spec/figgeo_spec.rb
+     FFFF
+     
+     Failures:
+     
+       1) Figuras Geométricas Cuadrado - entero El perímetro de un cuadrado de lado 4 tiene el valor de 16
+          Failure/Error: expect(perimetro_cuadrado(4)).to eq(16)
+          
+          NoMethodError:
+            undefined method `perimetro_cuadrado' for #<RSpec::ExampleGroups::FigurasGeomTricas::CuadradoEntero:0x000061b90b7fb680>
+          # ./spec/figgeo_spec.rb:6:in `block (3 levels) in <top (required)>'
+     
+       2) Figuras Geométricas Cuadrado - entero El area de un cuadrado de lado 4 tiene el valor de 16
+          Failure/Error: expect(area_cuadrado(4)).to eq(16)
+          
+          NoMethodError:
+            undefined method `area_cuadrado' for #<RSpec::ExampleGroups::FigurasGeomTricas::CuadradoEntero:0x000061b90b7ebb68>
+          # ./spec/figgeo_spec.rb:9:in `block (3 levels) in <top (required)>'
+     
+       3) Figuras Geométricas Cuadrado - real El perímetro de un cuadrado de lado 4.0 tiene el valor de 16.0
+          Failure/Error: expect(perimetro_cuadrado(4.0)).to eq(16.0)
+          
+          NoMethodError:
+            undefined method `perimetro_cuadrado' for #<RSpec::ExampleGroups::FigurasGeomTricas::CuadradoReal:0x000061b90b7e3198>
+          # ./spec/figgeo_spec.rb:14:in `block (3 levels) in <top (required)>'
+     
+       4) Figuras Geométricas Cuadrado - real El area de un cuadrado de lado 4.0 tiene el valor de 16.0
+          Failure/Error: expect(area_cuadrado(4.0)).to eq(16.0)
+          
+          NoMethodError:
+            undefined method `area_cuadrado' for #<RSpec::ExampleGroups::FigurasGeomTricas::CuadradoReal:0x000061b90b7dd8d8>
+          # ./spec/figgeo_spec.rb:17:in `block (3 levels) in <top (required)>'
+     
+     Finished in 0.00334 seconds (files took 0.07989 seconds to load)
+     4 examples, 4 failures
+     
+     Failed examples:
+     
+     rspec ./spec/figgeo_spec.rb:5 # Figuras Geométricas Cuadrado - entero El perímetro de un cuadrado de lado 4 tiene el valor de 16
+     rspec ./spec/figgeo_spec.rb:8 # Figuras Geométricas Cuadrado - entero El area de un cuadrado de lado 4 tiene el valor de 16
+     rspec ./spec/figgeo_spec.rb:13 # Figuras Geométricas Cuadrado - real El perímetro de un cuadrado de lado 4.0 tiene el valor de 16.0
+     rspec ./spec/figgeo_spec.rb:16 # Figuras Geométricas Cuadrado - real El area de un cuadrado de lado 4.0 tiene el valor de 16.0
+     
+     rake aborted!
+     Command failed with status (1): [rspec -I. spec/figgeo_spec.rb...]
+     /home/usuario/LPP/TDD/Rakefile:5:in `block in <top (required)>'
+     Tasks: TOP => default => spec
+     (See full trace by running task with --trace)
+
+6. Se añaden el código al fichero de pruebas  -- funciona 
+
+     $ rake
+     rspec -I. spec/figgeo_spec.rb
+     ....
+     
+     Finished in 0.00396 seconds (files took 0.08765 seconds to load)
+     4 examples, 0 failures
+
+
+     $ rake doc
+     rspec -I. spec/figgeo_spec.rb --format documentation
+     
+     Figuras Geométricas
+       Cuadrado - entero
+         El perímetro de un cuadrado de lado 4 tiene el valor de 16
+         El area de un cuadrado de lado 4 tiene el valor de 16
+       Cuadrado - real
+         El perímetro de un cuadrado de lado 4.0 tiene el valor de 16.0
+         El area de un cuadrado de lado 4.0 tiene el valor de 16.0
+     
+     Finished in 0.0025 seconds (files took 0.09607 seconds to load)
+     4 examples, 0 failures
