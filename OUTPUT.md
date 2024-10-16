@@ -1,0 +1,44 @@
+# Ejemplo de pasos realizados
+
+
+1. No existe el fichero de pruebas
+
+     $rake
+     rspec -I. spec/figgeo_spec.rb
+     
+     An error occurred while loading ./spec/figgeo_spec.rb.
+     Failure/Error: __send__(method, file)
+     
+     LoadError:
+       cannot load such file -- /home/usuario/LPP/TDD/spec/figgeo_spec.rb
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/lib/rspec/core/configuration.rb:2139:in `load'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/lib/rspec/core/configuration.rb:2139:in `load_file_handling_errors'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/lib/rspec/core/configuration.rb:1638:in `block in load_spec_files'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/lib/rspec/core/configuration.rb:1636:in `each'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/lib/rspec/core/configuration.rb:1636:in `load_spec_files'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/lib/rspec/core/runner.rb:102:in `setup'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/lib/rspec/core/runner.rb:86:in `run'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/lib/rspec/core/runner.rb:71:in `run'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/lib/rspec/core/runner.rb:45:in `invoke'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/gems/rspec-core-3.13.1/exe/rspec:4:in `<top (required)>'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/bin/rspec:23:in `load'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/bin/rspec:23:in `<main>'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/bin/ruby_executable_hooks:22:in `eval'
+     # /home/usuario/.rvm/gems/ruby-2.7.2/bin/ruby_executable_hooks:22:in `<main>'
+     # 
+     #   Showing full backtrace because every line was filtered out.
+     #   See docs for RSpec::Configuration#backtrace_exclusion_patterns and
+     #   RSpec::Configuration#backtrace_inclusion_patterns for more information.
+     No examples found.
+     
+     
+     Finished in 0.00003 seconds (files took 0.17609 seconds to load)
+     0 examples, 0 failures, 1 error occurred outside of examples
+     
+     rake aborted!
+     Command failed with status (1): [rspec -I. spec/figgeo_spec.rb...]
+     /home/usuario/LPP/TDD/Rakefile:5:in `block in <top (required)>'
+     Tasks: TOP => default => spec
+     (See full trace by running task with --trace)
+
+2. Se crea fichero de pruebas vací vacío
